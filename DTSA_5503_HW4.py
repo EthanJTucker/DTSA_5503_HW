@@ -337,10 +337,7 @@ def translate_three_coloring(graph):
         s.add_clause([3*i + 1, 3*i + 2, 3*i + 3]) #Neither i nor j can have any color but 1 2 or 3
         s.add_clause([3*j + 1, 3*j + 2, 3*j + 3])
         s.add_clause([-(3*i + 1), -(3*i + 2)])  # Both i and j can only be one color
-        s.add_clause([-(3*i + 1), -(3*i + 3)]) ## May need to add in duplicate terms to make things work
-        s.add_clause([-(3*i + 2), -(3*i + 3)])
-        s.add_clause([-(3*j + 1), -(3*j + 2)])
-        s.add_clause([-(3*j + 1), -(3*j + 3)])
+        s.add_clause([-(3*i + 1), -(3*i + 3)])
         s.add_clause([-(3*i + 2), -(3*i + 3)])
         s.add_clause([-(3*i + 1), -(3*j + 1)]) # i and j can't both have the same color
         s.add_clause([-(3*i + 2), -(3*j + 2)])
